@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Link</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #output {
+            margin-top: 20px;
+            background-color: #333;
+            padding: 10px;
+            width: 300px;
+            word-wrap: break-word;
+        }
+        a {
+            color: #1E90FF;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Link Generator</h1>
+    <button onclick="generateLink()">Generate Link</button>
+
+    <div id="output"></div>
+
+    <script>
+        function generateLink() {
+            // Generate some dynamic data (e.g., UI-related or an executor name)
+            const data = "executor_ui_" + Math.random().toString(36).substring(2, 10).toUpperCase();
+
+            // Construct the Linkvertise URL with the dynamic data
+            const linkvertiseURL = `https://link-center.net/1203026/keyforronex/data=${data}`;
+
+            // Display the generated link
+            document.getElementById("output").innerHTML = `
+                <p><strong>Generated Link:</strong></p>
+                <p><a href="${linkvertiseURL}" target="_blank">${linkvertiseURL}</a></p>
+            `;
+        }
+    </script>
+
+</body>
+</html>
